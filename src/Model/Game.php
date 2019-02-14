@@ -1,8 +1,9 @@
 <?php
 declare(strict_types=1);
-namespace App\Roulette;
+namespace App\Model;
 use App\Model\Round;
 use App\Model\Bank;
+use App\Console\ConsoleInteraction;
 
 
 class Game {
@@ -36,7 +37,8 @@ class Game {
         do {
         $this->consoleInteraction->askText('Quel est votre nom ?');
         $this->consoleInteraction->askInt('Combien avez-vous dans vos poches ? (en €)');
-        $this->consoleInteraction->askYesNo('Ajouter un nouveau joueur ? (Oui/Non)');
-        } while ($this->consoleInteraction->askYesNo('Ajouter un nouveau joueur ? (Oui/Non)') === 'Oui');   
+        $askyesno = $this->consoleInteraction->askYesNo('Ajouter un nouveau joueur ? (Oui/Non)');
+        } while ($askyesno == 'Oui');  
+        
     }
 }

@@ -6,6 +6,6 @@ class Cases {
     /**@var int|null */
     private $number;
 
-    /**@var srting */
+    /**@var string */
     private $color;
 }
